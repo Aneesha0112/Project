@@ -19,7 +19,7 @@
     return notes;
   } 
   
-  getallnotes();
+  //getallnotes();
   
   async function getnote(note) {
     let sql = `
@@ -32,6 +32,8 @@
   }
   
   async function createnote(note){
+
+    let cNote=await getnote(note);
   
     let sql=`INSERT INTO notes (userID,notecontent) VALUES ("${note.userID}", "${note.notecontent}");`
   
